@@ -1,0 +1,4 @@
+declare
+X = 5.5
+
+{Browse X}

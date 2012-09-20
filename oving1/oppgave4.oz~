@@ -1,0 +1,12 @@
+declare
+proc {Circle R}
+   Pi = 3
+   A D O in
+   A = Pi*R*R
+   D = 2*R
+   O = D*Pi
+   {Browse [A D O]}
+end
+
+{Circle 2}
+{Browse Pi}

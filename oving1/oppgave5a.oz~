@@ -1,0 +1,9 @@
+fun {SumTo FirstInt LastInt}
+   if FirstInt == LastInt then
+      FirstInt
+   else
+      FirstInt + {SumTo FistInt+1 LastInt}
+   end
+end
+
+{Browse {SumTo 0 2}}
