@@ -6,8 +6,6 @@ fun {Find Xs Ys}
    local Split in
       if Xs == nil then
 	 nil
-      elseif Xs.1 == Ys.1 then
-	 {Find Xs.2 Ys.2}
       else
 	 Split = {SplitTrain Xs Ys.1}
 	 {Browse Split}
@@ -27,4 +25,4 @@ fun {SplitTrain Xs Y}
    end
 end
 
-{Browse {Find [b a] [a b]}}
+{Browse {Find [a b] [b a]}} 
