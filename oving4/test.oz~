@@ -1,0 +1,7 @@
+declare
+fun lazy {MakeNaturals X}
+   X|{MakeNaturals X+1}
+end
+
+{Browse {Nth {MakeNAturals 1} 42}}
+	   

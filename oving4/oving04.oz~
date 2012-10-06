@@ -1,0 +1,10 @@
+declare
+fun lazy {StreamMap S F}
+   {F S.1}|{StreamMap S.2 F}
+end
+
+fun {Add X}
+   X+2
+end
+
+{Browse {StreamMap 1|2|3|... Add}}
