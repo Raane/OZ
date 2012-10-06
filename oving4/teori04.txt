@@ -1,10 +1,10 @@
 
 OPPGAVE 1
 1 a)
-	Når Nth kjøres evalueres strømmen helt til den når det N-te elementet og det returneres.
+	Når {Nth S N} kjøres evalueres strømmen S helt til den når det N-te elementet.
 1 b)
-	En liste har en slutt med elementet nil, en strøm er uendelig.
+	En liste har en slutt med elementet nil, en strøm er/kan være uendelig.
 1 c)
-	Kap 4.9 utenfor pensum
+	Kap 4.9 utenfor pensum? o.O
 	
 
