@@ -1,0 +1,25 @@
+declare
+fun {Appendoz Xs Ys}
+   case Xs
+   of nil then
+      Ys
+   [] X|Xr then
+      X|{Appendoz Xr Ys}
+   end
+end
+
+local Appendcore in
+   Appendcore = proc {$ Xs Ys Zs}
+		      case Xs of nil then
+			 Zs=Ys
+		      else
+			 case Xs of '|'(X Xr) then
+			    local Zr in Zs='|'(X Zr) {Appendcore Xr Ys Zr} end
+			 end
+		      end
+		end
+   {Browse {Appendcore [1 2 3] [4 5 6]}} '''This line is just to show that it works'''
+end
+
+
+{Browse {Appendoz [1 2 3] [4 5 6]}}

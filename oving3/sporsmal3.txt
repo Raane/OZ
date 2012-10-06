@@ -1,0 +1,3 @@
+Hva skal vi gjøre når vi støter på proc?
+Antar vi kan gjøre lignende p -> proc {$ X Y} .... i store, men skjønner ikke hvordan
+vi skal jobbe mot den. 

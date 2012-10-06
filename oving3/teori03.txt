@@ -1,0 +1,110 @@
+OPPGAVE 1
+1 a)
+X er bundet mens de ikke lokale variablene P og Y er fri
+
+1 b)
+Som i oppgaven over er Z fri da den ikke er en lokal variabel, mens X og Y er bundet.
+
+1 c)
+Variabelen P er budet lokalt i prosedyren sin "closure", men bare der.  Derfor er P fri.  X og Y er bundet, mens Q og Z er fri.
+
+1 d)
+På grunn av bruken i tuppelen her er Y budet.  X, P og Q er fri.
+
+OPPGAVE 2
+2 a)
+Variabelen Q er ikke introdusert i prosedyren P og er derfor en ekstern referanse.
+
+2 b)
+Variabelen P er ikke introdusert i prosedyren P og er derfor en ekstern referanse.
+
+2 c)
+Variablene Q, Z og U er ikke introdusert i prosedyren P og er derfor eksterne referanser.
+
+2 d)
+Variablene Q, Z og U er ikke introdusert i prosedyren P.  Z er likevel ikke en ekstern referamse, fordi den er eklarert som en lokal variabel. Q og U er eksterne referanser.
+
+2 e)
+Variabelen Q er hverken lokal eller introdusert i prosedyren P og er derfor en ekstern referanse.
+
+OPPGAVE 4
+Forklaring: 
+	Skriver på samme måte som for local i 2.4.3, men legger nå til flere variabler i minnet og miljøet før vi pusher <s> på stacken.
+	For å legge til flere mappinger i miljøet bruker vi syntaksen på siden/avsnittet før
+	
+The semantic statement is:
+	local <x>1...<x>n in <s> end
+Execution consists of the following actions:
+	1. Create new variables x1...xn in the store.
+	2. Let E' be E + {<x>1 -> x1,...,<x>n -> xn}
+	3. Push (<s>, E') on the stack.
+
+OPPGAVE 5 a)
+Step 0:		( [(local B in if B then skip else skip end end, ø )], ø )
+Step 1:1	Create a new variable b in the store.
+	   2	We create a new mapping from B in the environment to b in the store.
+	   3	We push (<s>,E') to the stack
+			^ ( [(if B then skip else skip end, {B -> b} )], {b} ) 
+We cannot do anything more as we don't know the value of B (b).
+
+5 b)
+Step 0:		( [(local B in B = false if B then skip else skip end end, ø )], ø )
+Step 1:		Same procedure as above, will push
+			( [(B = false if B then skip else skip end, {B -> b} )], {b} )
+Step 2:		Set b to false in sthe store
+			( [(if B then skip else skip end, {B -> b} )], {b = false} )
+Step 3:		E<B> -> b = false, so <s2> is pushed on the stack
+			( [(skip, {B -> b} )], {b = false} )
+Execution is complete after this pair is popped from the semantic stack.
+
+5 c)
+Step 0:		( [(local X Z A B P in
+					proc {P X Y}
+						Y = X + Z
+					end
+					Z = 7
+					X = 4
+					{P X A}
+					{P A B}
+				end, ø)], ø)
+				
+Step 1:		( [(proc {P X Y}
+					Y = X + Z
+				end
+				Z = 7
+				X = 4
+				{P X A}
+				{P A B}, 
+				{X -> x, Z -> z, A -> a, B -> b, P -> p)],
+				{x, z, a, b, p})
+				
+Step 2:		( [(proc {P X Y}
+					Y = X + Z
+				end
+				Z = 7
+				X = 4
+				{P X A}
+				{P A B}, 
+				{X -> x, Z -> z, A -> a, B -> b, P -> p)],
+				{x, z, a, b, p})
+	Klarer ikke løse deloppgaven da vi ikke skjønner/finner hva som
+	skjer når vi møter på proc.
+
+
+OPPGAVE 6 a)
+Denne er ikke unifiserbar fordi X = 2 X = 3 rent matematisk ikke går (2!=3).
+
+6 b)
+Det er ikke noe i veien for at både X, Y og Z skal settes til a.  Det er derfor unifiserbart.
+
+6 c)
+Dersom X = 3|4|Y|nil og Y er en gyldig verdi i utrykket D = 1|2|3|4|Y|nil går dette fint.  Det er derfor unifiserbart.
+
+6 d)
+Du kan ikke ha nil midt i en liste.  Uttrykket er derfor ikke unfiserbart.
+
+6 e)
+For at dette skal være unifiserbart må Y = 3|4|Y.  Det er derfor ikke unifiserbart.
+			
+		
+		
