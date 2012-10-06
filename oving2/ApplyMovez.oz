@@ -28,8 +28,8 @@ fun {ApplyMove State Move}
    end
 end
 %{Browse {ApplyMove state(main:[a b] trackA:[c e] trackB:[d f g]) trackB(~1)}}
-%{Browse {ApplyMoves state(main:[a b] trackA:nil trackB:nil) [trackA(1) trackB(1) trackA(~1)]}}
-{Visualize [state(main:[a b] trackA:nil trackB:nil)
-state(main:[a] trackA:[b] trackB:nil)
-state(main:nil trackA:[b] trackB:[a])
-state(main:[b] trackA:nil trackB:[a])]}
+{Visualize {ApplyMoves state(main:[a b] trackA:nil trackB:nil) [trackA(1) trackB(1) trackA(~1)]}}
+%{Visualize [state(main:[a b] trackA:nil trackB:nil)
+%state(main:[a] trackA:[b] trackB:nil)
+%state(main:nil trackA:[b] trackB:[a])
+%state(main:[b] trackA:nil trackB:[a])]}

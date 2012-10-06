@@ -1,0 +1,1 @@
+This issue will never occur in our code, and we will not be needing the the compress method.
