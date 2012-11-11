@@ -1,0 +1,25 @@
+Oppgave 4
+
+a)
+Med callback kan serveren kommunisere med klienten igjen.
+For at dette skal gi mening må ikke klienten vente på svar
+fra serveren før den gjør noe, for da får ikke serveren respons
+fra klienten og vi får en deadlock.
+
+b)
+Forskjellige måter i fra boka:
+
+RMI using Thread
+Unngår deadlock ved å tråde operasjoner som venter på svar fra 
+serveren. Hadde de blokket på svar fra serveren, mens serveren ville
+ha svar fra klienten hadde vi jo aldri kommet videre.
+Man løfter synkroniseringen fra klienten og opp til applikasjonen
+som bruker klienten.
+
+RMI using record
+Det er dyrt å opprette tråder hele tiden, så her løser en problemet
+med å sende records og matche dem.
+
+RMI using procedure continuation
+Her sender en over en hel prosedyre med arbeid som skal gjøres, litt på
+samme måte som å sende records.

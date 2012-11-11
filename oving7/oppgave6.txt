@@ -1,0 +1,12 @@
+Oppgave 6
+
+a)
+At tråder "are interleaving" betyr at de kjører om hverandre. 
+Altså at kanskje T1 kjører litt, så T2, så litt T1 og så T3. Evt.
+at flere tråder kjøres i parallell. Man kan ikke gjøre antagelser om
+når tråder får kjøre, så et program må ta hensyn til at ting kan gjøre
+forskjellig fra hver enkelt kjøring og fortsatt gi riktig resultat.
+
+b)
+
+
